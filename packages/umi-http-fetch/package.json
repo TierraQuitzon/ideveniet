@@ -1,0 +1,67 @@
+{
+  "name": "@stay.hungry07212/umi-http-fetch",
+  "version": "0.9.1",
+  "description": "An HTTP implementation relying on the fetch API",
+  "license": "MIT",
+  "sideEffects": false,
+  "module": "dist/esm/index.mjs",
+  "main": "dist/cjs/index.cjs",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": [
+    "/dist/cjs",
+    "/dist/esm",
+    "/dist/types",
+    "/src"
+  ],
+  "scripts": {
+    "lint": "eslint --ext js,ts,tsx src",
+    "lint:fix": "eslint --fix --ext js,ts,tsx src",
+    "clean": "rimraf dist",
+    "build": "pnpm clean && tsc && tsc -p test/tsconfig.json && rollup -c",
+    "test": "pnpm server:start && ava; ret=$?; pnpm server:stop; exit $ret",
+    "server:start": "node ./test/_server.cjs > /dev/null &",
+    "server:stop": "kill $(lsof -t -i:3000) 2> /dev/null || true"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "peerDependencies": {
+    "@stay.hungry07212/umi": "workspace:^"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^3.0.1",
+    "@stay.hungry07212/umi": "workspace:^",
+    "@types/node-fetch": "^2.6.2",
+    "ava": "^5.1.0",
+    "json-server": "^0.17.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Metaplex Maintainers <contact@metaplex.com>",
+  "homepage": "https://metaplex.com",
+  "repository": {
+    "url": "https://github.com/stayhungry07212/umi.git"
+  },
+  "typedoc": {
+    "entryPoint": "./src/index.ts",
+    "readmeFile": "./README.md",
+    "displayName": "umi-http-fetch"
+  },
+  "ava": {
+    "typescript": {
+      "compile": false,
+      "rewritePaths": {
+        "src/": "dist/test/src/",
+        "test/": "dist/test/test/"
+      }
+    }
+  }
+}

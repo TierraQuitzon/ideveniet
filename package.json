@@ -1,0 +1,70 @@
+{
+  "name": "ideveniet",
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "description": "A JavaScript Framework for Solana clients",
+  "keywords": [
+    "molestias",
+    "modi",
+    "et",
+    "ratione"
+  ],
+  "author": "ErwinMayer",
+  "homepage": "https://github.com/TierraQuitzon/ideveniet.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TierraQuitzon/ideveniet.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.0",
+    "@metaplex-foundation/amman": "^0.12.0",
+    "@metaplex-foundation/amman-client": "^0.2.2",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-terser": "^0.2.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "chalk": "^5.2.0",
+    "depcheck": "^1.4.3",
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^4.0.0",
+    "prettier": "^2.8.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.72.0",
+    "rollup-plugin-polyfill-node": "^0.9.0",
+    "turbo": "^1.9.1",
+    "typedoc": "^0.23.0",
+    "typedoc-plugin-resolve-crossmodule-references": "^0.3.3",
+    "typescript": "^4.9.5",
+    "vercel": "^28.16.1"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "packageManager": "pnpm@8.2.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "@changesets/assemble-release-plan@5.2.3": "patches/@changesets__assemble-release-plan@5.2.3.patch"
+    }
+  },
+  "version": "1.0.0"
+}

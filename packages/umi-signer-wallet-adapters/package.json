@@ -1,0 +1,65 @@
+{
+  "name": "@stay.hungry07212/umi-signer-wallet-adapters",
+  "version": "0.9.1",
+  "description": "A Signer implementation relying on Solana's wallet adapters",
+  "license": "MIT",
+  "sideEffects": false,
+  "module": "dist/esm/index.mjs",
+  "main": "dist/cjs/index.cjs",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": [
+    "/dist/cjs",
+    "/dist/esm",
+    "/dist/types",
+    "/src"
+  ],
+  "scripts": {
+    "lint": "eslint --ext js,ts,tsx src",
+    "lint:fix": "eslint --fix --ext js,ts,tsx src",
+    "clean": "rimraf dist",
+    "build": "pnpm clean && tsc && tsc -p test/tsconfig.json && rollup -c",
+    "test": "ava"
+  },
+  "dependencies": {
+    "@stay.hungry07212/umi-web3js-adapters": "workspace:^"
+  },
+  "peerDependencies": {
+    "@stay.hungry07212/umi": "workspace:^",
+    "@solana/web3.js": "^1.72.0"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^3.0.1",
+    "@stay.hungry07212/umi": "workspace:^",
+    "@solana/web3.js": "^1.72.0",
+    "ava": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Metaplex Maintainers <contact@metaplex.com>",
+  "homepage": "https://metaplex.com",
+  "repository": {
+    "url": "https://github.com/stayhungry07212/umi.git"
+  },
+  "typedoc": {
+    "entryPoint": "./src/index.ts",
+    "readmeFile": "./README.md",
+    "displayName": "umi-signer-wallet-adapters"
+  },
+  "ava": {
+    "typescript": {
+      "compile": false,
+      "rewritePaths": {
+        "src/": "dist/test/src/",
+        "test/": "dist/test/test/"
+      }
+    }
+  }
+}
